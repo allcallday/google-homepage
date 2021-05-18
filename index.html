@@ -83,15 +83,36 @@
         border-width: 1px;
         border-color: #dadce0;
         outline: none;
-        background-image: url(material-design-icons/search/);
+    }
+
+    #search input[type="text"] {
+        position: relative;
+        right: 40%;
     }
 
     #search:hover {
         box-shadow: 1px 1px 1px 1px #dadce0;
     }
 
+    #search_wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
-    ul { <!--removes bullets and margins in nav bar-->
+    #search_wrapper i {
+        position: relative;
+        float: left;
+    }
+
+    #search_image {
+        color: #dadce0;
+        top: 8px;
+        left: 35px;
+    }
+
+
+    ul { 
         list-style-type: none;
         margin: 0 px;
         padding: 0 px;
@@ -124,49 +145,66 @@
         width: 100%;
         font-size: 14px;
         color: black;
+
     }
 
     #left-header {
         float: left;
+        position: fixed;
+        top: 10px;
+        left: 0;
     }
 
     #right-header {
         float: right;
+        position: fixed;
+        top: 0;
+        right: 0;
     }
 
     #left-footer {
         float: left;
+
     }
 
     #right-footer {
         float: right;
         margin-right: 15px;
+        
     }
 
     #apps-button {
         color: #70757a;
         vertical-align: middle;
+        padding: 5px;
+        border-radius: 150%;
+        border-color: transparent;
+        border-width: 1px;
+        border-style: solid;
     }
 
     #apps-button:hover {
-        border-color: black;
+        border-color: transparent;
+        background: rgba(60,64,67,0.08); 
+        vertical-align: middle;
+        padding: 5px;
         border-width: 1px;
         border-style: solid;
-        border-radius: 100%;
+        border-radius: 150%;
         
     }
 
     #sign-in {
-        padding: 5px 15px 5px 15px;
+        padding: 8px 25px 8px 25px;
         color: white;
-        background: #2b7de9;
+        background: #1a73e8;
         margin-right: 15px;
         -moz-border-radius: 5px;
         -webkit-border-radius: 5px;
     }
 
     #sign-in:hover {
-
+        background: #2b7de9;
     }
 
 
@@ -174,14 +212,14 @@
 
 <header>
     <ul id="left-header">
-        <li><a href="#">About</a></li>
+        <li><a href="#"">About</a></li>
         <li><a href="#">Store</a></li>
     </ul>
     <ul id=right-header>
         <li><a href="#">Gmail</a></li>
         <li><a href="#">Images</a></li>
-        <li style="text-decoration: none;" id=apps-button>
-            <a href="#"> </a><i class="material-icons">apps</i> </a>
+        <li style="text-decoration: none;">
+            <a href="#"><i class="material-icons" id="apps-button">apps</i> </a>
         </li>
         <button id=sign-in type="submit">Sign in</button>
 
@@ -195,8 +233,9 @@
     </div>
     
     <form>
-        <div class="container">
-            <input id="search" type="search">
+        <div id="search_wrapper">
+            <i class="material-icons" id="search_image">search</i>  
+            <input id="search" type="search"> 
         </div>
         <div class="container">
             <button id="searchbutton" type="submit">Google Search</button>
